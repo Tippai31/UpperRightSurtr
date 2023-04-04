@@ -280,7 +280,7 @@ export default {
   transform: translateX(100%);
 }
 
-@media (width < 480px) {
+@media screen and (max-width: 480px) {
   .list-field {
     width: 90%;
     max-width: 900px;

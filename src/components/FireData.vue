@@ -1094,7 +1094,7 @@ li div input {
 }
 
 
-@media (width < 480px) {
+@media screen and (max-width: 480px) {
   .field {
     width: 100%;
   }
