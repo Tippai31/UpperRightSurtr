@@ -1,0 +1,24 @@
+[debug] [2023-03-05T12:45:36.863Z] ----------------------------------------------------------------------
+[debug] [2023-03-05T12:45:36.865Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\SNNK\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-03-05T12:45:36.866Z] CLI Version:   11.24.0
+[debug] [2023-03-05T12:45:36.866Z] Platform:      win32
+[debug] [2023-03-05T12:45:36.866Z] Node Version:  v18.14.2
+[debug] [2023-03-05T12:45:36.867Z] Time:          Sun Mar 05 2023 21:45:36 GMT+0900 (日本標準時)
+[debug] [2023-03-05T12:45:36.867Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-05T12:45:36.870Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-03-05T12:45:36.912Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-05T12:45:36.912Z] > authorizing via signed-in user (gumillia31@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\SNNK\arknights-calc
+
+[debug] [2023-03-05T12:45:37.299Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-03-05T12:45:37.299Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
