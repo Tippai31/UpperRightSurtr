@@ -374,7 +374,7 @@
           </ul>
         </div>
       </TransitionGroup>
-      <div class="character-set" :style="{ backgroundImage: `url(${chimg})` }" @click="listshowing">
+      <div class="character-set" :style="{ backgroundImage: 'url(' + chimg + ')' }" @click="listshowing">
       </div>
     </div>
   </div>
@@ -472,7 +472,7 @@ export default {
     };
   },
   created: function () {
-    this.chimg = "../chsd/noimg.png"
+    this.chimg = "chsd/noimg.png"
   },
   mounted: function () {
     this.video = document.querySelector('.suruto')
@@ -485,9 +485,9 @@ export default {
     pick(selected) {
       if (selected) {
         this.status = selected
-        this.chimg = "../chsd/" + this.status.name + ".png"
+        this.chimg = "chsd/" + this.status.name + ".png"
       } else {
-        this.chimg = "../chsd/noimg.png"
+        this.chimg = "chsd/noimg.png"
       }
     },
     onTimeUpdate() {

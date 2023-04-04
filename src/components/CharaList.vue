@@ -19,7 +19,7 @@
       <div class="chara-list">
         <ul>
           <li v-for="item in filterdList" :key="item.name" @click="getName(item.name)"
-            :style="{ backgroundImage: 'url(../chbg/charabg' + item.rarity + '.png' }">
+            :style="{ backgroundImage: 'url(chbg/charabg' + item.rarity + '.png' }">
             <p>{{ item.name }}</p>
             <img :src="require('../../public/chimages/' + item.name + '.png')" :alt="item.name">
             <img class="profession" :src="require('../../public/logo/' + item.class + '.jpeg')">
