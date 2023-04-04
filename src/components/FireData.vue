@@ -374,7 +374,7 @@
           </ul>
         </div>
       </TransitionGroup>
-      <div class="character-set" :style="{ 'background-image': 'url(../../public/' + chimg + ')' }" @click="listshowing">
+      <div class="character-set" :style="{ backgroundImage: `url(${chimg})` }" @click="listshowing">
       </div>
     </div>
   </div>
@@ -472,7 +472,7 @@ export default {
     };
   },
   created: function () {
-    this.chimg = "../../public/chsd/noimg.png"
+    this.chimg = "../chsd/noimg.png"
   },
   mounted: function () {
     this.video = document.querySelector('.suruto')
@@ -485,9 +485,9 @@ export default {
     pick(selected) {
       if (selected) {
         this.status = selected
-        this.chimg = "../../public/chsd/" + this.status.name + ".png"
+        this.chimg = "../chsd/" + this.status.name + ".png"
       } else {
-        this.chimg = "../../public/chsd/noimg.png"
+        this.chimg = "../chsd/noimg.png"
       }
     },
     onTimeUpdate() {
@@ -501,25 +501,25 @@ export default {
     },
     showSurtr() {
       this.showvideo = true
-      this.video.src = '../../public/chbg/スルトstart.webm';
+      this.video.src = '../chbg/スルトstart.webm';
     },
     Laevatein() {
       switch (this.canvasstate) {
         case 0:
           this.video.loop = true
-          this.video.src = '../../public/chbg/スルトidle.webm';
+          this.video.src = '../chbg/スルトidle.webm';
           this.canvas.addEventListener('click', this.Laevatein, true)
           this.canvasstate = 1
           break;
         case 1:
           this.canvas.removeEventListener('click', this.Laevatein, true)
           this.video.loop = false
-          this.video.src = '../../public/chbg/スルトs3start.webm';
+          this.video.src = '../chbg/スルトs3start.webm';
           this.canvasstate = 2
           break;
         case 2:
           this.video.loop = true
-          this.video.src = '../../public/chbg/スルトs3loop.webm';
+          this.video.src = '../chbg/スルトs3loop.webm';
           setTimeout(() => {
             this.$data.video.loop = false
             this.canvasstate = 3
@@ -527,7 +527,7 @@ export default {
           break;
         case 3:
           this.video.loop = false
-          this.video.src = '../../public/chbg/スルトdie.webm';
+          this.video.src = '../chbg/スルトdie.webm';
           this.canvasstate = 4
           break;
         case 4:
@@ -1139,14 +1139,14 @@ li div input {
   }
 
   .character-set {
-  position: fixed;
-  top: auto;
-  bottom: -10px;
-  left: 0;
-  width: 130px;
-  height: 130px;
-  transform: none;
-  z-index: 6;
-}
+    position: fixed;
+    top: auto;
+    bottom: -10px;
+    left: 0;
+    width: 130px;
+    height: 130px;
+    transform: none;
+    z-index: 6;
+  }
 }
 </style>
