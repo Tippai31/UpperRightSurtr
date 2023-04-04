@@ -10,7 +10,7 @@
         <ul v-show="filter_switch">
           <li :class="[terms == item ? 'on' : 'off']" v-for="(item) in profession" :key="item"
             @click="filterActive(item)">
-            <img :src="require('/public/logo/' + item + '.png')">
+            <img :src="require('./public/logo/' + item + '.png')">
           </li>
         </ul>
       </Transition>
@@ -19,10 +19,10 @@
       <div class="chara-list">
         <ul>
           <li v-for="item in filterdList" :key="item.name" @click="getName(item.name)"
-            :style="{ backgroundImage: 'url(/chbg/charabg' + item.rarity + '.png' }">
+            :style="{ backgroundImage: 'url(./public/chbg/charabg' + item.rarity + '.png' }">
             <p>{{ item.name }}</p>
-            <img :src="require('/public/chimages/' + item.name + '.png')" :alt="item.name">
-            <img class="profession" :src="require('/public/logo/' + item.class + '.jpeg')">
+            <img :src="require('./public/chimages/' + item.name + '.png')" :alt="item.name">
+            <img class="profession" :src="require('./public/logo/' + item.class + '.jpeg')">
           </li>
         </ul>
       </div>
