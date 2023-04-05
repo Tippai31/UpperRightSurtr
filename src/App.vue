@@ -54,7 +54,9 @@ export default {
   },
   mounted() {
     window.onload = () => {
-      this.show = false
+      setTimeout(() => {
+        this.show = false
+      }, 500);
     }
     if (this.$cookies.isKey('visited')) {
       let visitCount = this.$cookies.get('visited')
@@ -159,6 +161,8 @@ export default {
 }
 
 .loading {
+  pointer-events: none;
+  user-select: none;
   font-family: "timeline";
   font-size: 4rem;
   display: flex;
@@ -215,11 +219,6 @@ export default {
 @font-face {
   font-family: 'timeline';
   src: url("@/assets/font/Timeline.ttf");
-}
-
-@font-face {
-  font-family: 'molot';
-  src: url("@/assets/font/Molot.otf");
 }
 
 @font-face {

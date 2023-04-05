@@ -42,7 +42,7 @@ this.character = [
     potential: [200, 30, 0, 0, 0],
     trust: [200, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [150, 50, 0, 0, 0],
   },
   {
     name: "アーミヤ前衛",
@@ -86,7 +86,7 @@ this.character = [
     interval: 1.3,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 50, 50, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 80, 0, 0, 7],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -101,7 +101,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 25, 0, 0, 0],
     trust: [400, 0, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 60, 25, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -116,7 +116,7 @@ this.character = [
     interval: 2.9,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [165, 62, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -161,7 +161,7 @@ this.character = [
     interval: 1.5,
     potential: [0, 35, 0, 0, 0],
     trust: [200, 85, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [330, 105, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -207,7 +207,7 @@ this.character = [
     potential: [0, 24, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [155, 42, 22, 0, 0],
   },
   {
     name: "帰溟スペクター",
@@ -221,8 +221,8 @@ this.character = [
     interval: 1.2,
     potential: [0, 33, 0, 0, 0],
     trust: [0, 80, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [250, 83, 30, 0, 0],
+    moduleY: [250, 40, 55, 0, 0],
   },
   {
     name: "百錬ガヴィル",
@@ -251,7 +251,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [190, 41, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -266,7 +266,7 @@ this.character = [
     interval: 1.5,
     potential: [0, 30, 0, 0, 0],
     trust: [0, 75, 25, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [220, 95, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -296,7 +296,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 24, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [120, 0, 0, 0, 6],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -312,7 +312,7 @@ this.character = [
     potential: [0, 25, 0, 0, 0],
     trust: [0, 60, 25, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [260, 82, 0, 0, 0],
   },
   {
     name: "ディピカ",
@@ -327,7 +327,7 @@ this.character = [
     potential: [0, 0, 0, 0, 8],
     trust: [300, 0, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [115, 35, 0, 0, 0],
   },
   {
     name: "ギターノ",
@@ -341,7 +341,7 @@ this.character = [
     interval: 2.9,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [150, 57, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -390,6 +390,21 @@ this.character = [
     moduleY: [0, 0, 0, 0, 0],
   },
   {
+    name: "寒芒クルース",
+    rarity: 5,
+    class: "狙撃",
+    hp: 1520,
+    atk: 502,
+    def: 176,
+    res: 0,
+    block: 1,
+    interval: 1.0,
+    potential: [0, 0, 0, 0, 0],
+    trust: [0, 75, 0, 0, 0],
+    moduleX: [190, 31, 0, 0, 0],
+    moduleY: [0, 0, 0, 0, 0],
+  },
+  {
     name: "ハイビスカス",
     rarity: 3,
     class: "医療",
@@ -416,7 +431,7 @@ this.character = [
     interval: 2.8,
     potential: [0, 35, 0, 0, 0],
     trust: [0, 100, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [210, 78, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -432,7 +447,7 @@ this.character = [
     potential: [0, 30, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [160, 30, 0, 0, 5],
   },
   {
     name: "ラヴァ",
@@ -461,7 +476,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 23, 0, 0],
     trust: [0, 60, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [100, 0, 0, 0, 5],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -476,7 +491,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 65, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [180, 30, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -492,7 +507,7 @@ this.character = [
     potential: [150, 0, 0, 0, 0],
     trust: [0, 30, 30, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [80, 53, 0, 0, 5],
   },
   {
     name: "エステル",
@@ -521,7 +536,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 21, 0, 0, 0],
     trust: [0, 55, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [100, 47, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -537,7 +552,7 @@ this.character = [
     potential: [0, 24, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 30, 0, 0, 4],
   },
   {
     name: "エンカク",
@@ -552,7 +567,7 @@ this.character = [
     potential: [0, 0, 0, 0, 0],
     trust: [400, 45, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [430, 0, 0, 0, 5],
   },
   {
     name: "ホシグマ",
@@ -566,8 +581,8 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 30, 0, 0],
     trust: [0, 60, 60, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [200, 0, 140, 0, 0],
+    moduleY: [0, 70, 100, 0, 0],
   },
   {
     name: "イフリータ",
@@ -581,7 +596,7 @@ this.character = [
     interval: 2.9,
     potential: [0, 35, 0, 0, 0],
     trust: [0, 110, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 72, 0, 0, 7],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -612,7 +627,7 @@ this.character = [
     potential: [0, 28, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [120, 74, 0, 0, 0],
   },
   {
     name: "ビーハンター",
@@ -641,7 +656,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 65, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 27, 0, 0, 3],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -656,7 +671,7 @@ this.character = [
     interval: 1.6,
     potential: [100, 0, 0, 0, 0],
     trust: [0, 60, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 40, 25, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -671,7 +686,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 25, 0, 0],
     trust: [0, 40, 50, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [300, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -686,7 +701,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 30, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 55, 45, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -702,7 +717,7 @@ this.character = [
     potential: [0, 20, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 74, 0, 0, 4],
   },
   {
     name: "スペクター",
@@ -731,8 +746,8 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 25, 0, 0],
     trust: [0, 80, 20, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [0, 60, 20, 0, 0],
+    moduleY: [0, 60, 0, 0, 7],
   },
   {
     name: "スカベンジャー",
@@ -746,7 +761,7 @@ this.character = [
     interval: 1.05,
     potential: [0, 25, 0, 0, 0],
     trust: [0, 60, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 36, 25, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -776,7 +791,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 27, 0, 0],
     trust: [0, 0, 75, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [170, 0, 80, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -807,7 +822,7 @@ this.character = [
     potential: [0, 35, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [130, 87, 0, 0, 0],
   },
   {
     name: "コンビクション",
@@ -821,7 +836,7 @@ this.character = [
     interval: 1.5,
     potential: [0, 0, 0, 0, 0],
     trust: [222, 22, 22, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 80, 0, 0, 4],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -837,7 +852,7 @@ this.character = [
     potential: [0, 26, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 50, 0, 0, 5],
   },
   {
     name: "スカイフレア",
@@ -852,7 +867,7 @@ this.character = [
     potential: [0, 33, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 70, 0, 0, 5],
   },
   {
     name: "ヴァルカン",
@@ -896,7 +911,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [80, 47, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -912,7 +927,7 @@ this.character = [
     potential: [0, 19, 0, 0, 0],
     trust: [150, 25, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [90, 40, 0, 0, 0],
   },
   {
     name: "アーススピリット",
@@ -927,7 +942,7 @@ this.character = [
     potential: [0, 21, 0, 0, 0],
     trust: [0, 50, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [130, 0, 38, 0, 0],
   },
   {
     name: "クリフハート",
@@ -941,7 +956,7 @@ this.character = [
     interval: 1.8,
     potential: [0, 0, 0, 0, 8],
     trust: [0, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 40, 31, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -972,7 +987,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 0, 10, 0],
     trust: [0, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 65, 0, 5, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -987,7 +1002,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [180, 65, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1003,7 +1018,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 30, 30, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [70, 35, 0, 0, 0],
   },
   {
     name: "ムース",
@@ -1032,7 +1047,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 24, 0, 0, 0],
     trust: [0, 65, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [170, 31, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1077,7 +1092,7 @@ this.character = [
     interval: 2.4,
     potential: [0, 34, 0, 0, 0],
     trust: [0, 110, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 90, 45, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1092,7 +1107,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [180, 65, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1108,7 +1123,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 65, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [160, 0, 0, 0, 5],
   },
   {
     name: "マッターホルン",
@@ -1122,7 +1137,7 @@ this.character = [
     interval: 1.2,
     potential: [250, 0, 0, 0, 0],
     trust: [385, 0, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [380, 0, 50, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1137,7 +1152,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 21, 0, 0, 0],
     trust: [400, 0, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [250, 55, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1152,7 +1167,7 @@ this.character = [
     interval: 1.05,
     potential: [0, 0, 23, 0, 0],
     trust: [0, 0, 60, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [195, 0, 30, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1167,7 +1182,22 @@ this.character = [
     interval: 1.5,
     potential: [0, 24, 30, 0, 0],
     trust: [400, 0, 70, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [375, 50, 80, 0, 0],
+    moduleY: [0, 0, 0, 0, 0],
+  },
+  {
+    name: "クロワッサン",
+    rarity: 5,
+    class: "重装",
+    hp: 3520,
+    atk: 380,
+    def: 710,
+    res: 0,
+    block: 3,
+    interval: 1.2,
+    potential: [0, 0, 26, 0, 0],
+    trust: [150, 0, 60, 0, 0],
+    moduleX: [350, 0, 68, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1182,8 +1212,8 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 27, 0, 0],
     trust: [0, 50, 60, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [350, 70, 0, 0, 0],
+    moduleY: [270, 50, 50, 0, 0],
   },
   {
     name: "シー",
@@ -1197,8 +1227,8 @@ this.character = [
     interval: 2.9,
     potential: [0, 34, 0, 0, 0],
     trust: [0, 110, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [190, 80, 0, 0, 0],
+    moduleY: [0, 82, 0, 0, 7],
   },
   {
     name: "リィン",
@@ -1213,7 +1243,7 @@ this.character = [
     potential: [0, 24, 0, 0, 0],
     trust: [350, 35, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [150, 50, 0, 0, 0],
   },
   {
     name: "プラチナ",
@@ -1227,7 +1257,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [170, 40, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1272,7 +1302,7 @@ this.character = [
     interval: 3.5,
     potential: [0, 30, 0, 0, 0],
     trust: [0, 60, 30, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 85, 31, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1318,7 +1348,7 @@ this.character = [
     potential: [150, 0, 0, 0, 0],
     trust: [350, 0, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [120, 60, 0, 0, 0],
   },
   {
     name: "メランサ",
@@ -1363,7 +1393,7 @@ this.character = [
     potential: [0, 34, 0, 0, 0],
     trust: [0, 105, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 82, 0, 0, 7],
   },
   {
     name: "アンドレアナ",
@@ -1377,7 +1407,7 @@ this.character = [
     interval: 2.7,
     potential: [0, 35, 0, 0, 0],
     trust: [300, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [121, 91, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1393,7 +1423,7 @@ this.character = [
     potential: [0, 35, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [180, 65, 0, 0, 0],
   },
   {
     name: "グラニ",
@@ -1407,7 +1437,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 0, 70, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [200, 0, 67, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1423,7 +1453,7 @@ this.character = [
     potential: [0, 0, 25, 0, 0],
     trust: [200, 0, 60, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [330, 0, 45, 0, 0],
   },
   {
     name: "ア",
@@ -1452,7 +1482,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 25, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [180, 73, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1467,7 +1497,7 @@ this.character = [
     interval: 0.93,
     potential: [160, 0, 0, 0, 0],
     trust: [300, 0, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [135, 0, 60, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1482,7 +1512,7 @@ this.character = [
     interval: 1.8,
     potential: [0, 0, 22, 0, 0],
     trust: [0, 0, 60, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [200, 31, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1513,7 +1543,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 65, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 30, 30, 0, 0],
   },
   {
     name: "サベージ",
@@ -1542,7 +1572,7 @@ this.character = [
     interval: 1.3,
     potential: [0, 22, 0, 0, 0],
     trust: [0, 80, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 65, 0, 0, 5],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1557,7 +1587,7 @@ this.character = [
     interval: 0.93,
     potential: [0, 0, 19, 0, 0],
     trust: [0, 50, 30, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 95, 65, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1573,7 +1603,7 @@ this.character = [
     potential: [0, 0, 0, 0, 6],
     trust: [300, 0, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [170, 0, 0, 0, 5],
   },
   {
     name: "メイヤー",
@@ -1588,7 +1618,7 @@ this.character = [
     potential: [0, 0, 0, 8, 0],
     trust: [200, 35, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [120, 40, 0, 0, 0],
   },
   {
     name: "マゼラン",
@@ -1602,8 +1632,8 @@ this.character = [
     interval: 1.6,
     potential: [0, 23, 0, 0, 0],
     trust: [300, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [150, 50, 0, 0, 0],
+    moduleY: [0, 40, 40, 0, 0],
   },
   {
     name: "ファントム",
@@ -1617,7 +1647,7 @@ this.character = [
     interval: 0.93,
     potential: [130, 22, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [140, 73, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1632,8 +1662,8 @@ this.character = [
     interval: 1.5,
     potential: [0, 33, 0, 0, 0],
     trust: [0, 80, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [320, 105, 0, 0, 0],
+    moduleY: [450, 85, 0, 0, 0],
   },
   {
     name: "マウンテン",
@@ -1678,7 +1708,7 @@ this.character = [
     potential: [0, 25, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [180, 65, 0, 0, 0],
   },
   {
     name: "ジュナー",
@@ -1707,7 +1737,7 @@ this.character = [
     interval: 1.9,
     potential: [0, 21, 0, 0, 0],
     trust: [0, 50, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [110, 40, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1722,7 +1752,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 23, 0, 0, 0],
     trust: [200, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 50, 50, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1752,7 +1782,7 @@ this.character = [
     interval: 1.05,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 30, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 52, 52, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1767,7 +1797,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 20, 0, 0, 0],
     trust: [200, 30, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [100, 47, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -1798,7 +1828,7 @@ this.character = [
     potential: [140, 0, 0, 0, 0],
     trust: [200, 35, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [130, 33, 22, 0, 0],
   },
   {
     name: "オーキッド",
@@ -1873,7 +1903,7 @@ this.character = [
     potential: [0, 24, 0, 0, 0],
     trust: [0, 60, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [110, 65, 0, 0, 0],
   },
   {
     name: "ポプカル",
@@ -1918,7 +1948,7 @@ this.character = [
     potential: [180, 0, 0, 0, 0],
     trust: [450, 0, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [390, 55, 0, 0, 0],
   },
   {
     name: "Castle-3",
@@ -1963,8 +1993,8 @@ this.character = [
     interval: 1.9,
     potential: [0, 25, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [100, 20, 0, 0, 6],
+    moduleY: [120, 50, 0, 0, 0],
   },
   {
     name: "フィアメッタ",
@@ -1979,7 +2009,7 @@ this.character = [
     potential: [0, 35, 0, 0, 0],
     trust: [0, 100, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 70, 43, 0, 0],
   },
   {
     name: "ソーンズ",
@@ -2024,7 +2054,7 @@ this.character = [
     potential: [0, 21, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [150, 65, 0, 0, 0],
   },
   {
     name: "ススーロ",
@@ -2038,7 +2068,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 60, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [100, 0, 0, 0, 5],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2053,7 +2083,22 @@ this.character = [
     interval: 2.7,
     potential: [0, 0, 0, 0, 6],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [95, 81, 0, 0, 0],
+    moduleY: [0, 0, 0, 0, 0],
+  },
+  {
+    name: "ヘラグ",
+    rarity: 6,
+    class: "前衛",
+    hp: 3825,
+    atk: 762,
+    def: 334,
+    res: 0,
+    block: 1,
+    interval: 1.2,
+    potential: [0, 26, 0, 0, 0],
+    trust: [400, 70, 0, 0, 0],
+    moduleX: [350, 90, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2069,7 +2114,7 @@ this.character = [
     potential: [0, 0, 0, 0, 0],
     trust: [350, 0, 35, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [375, 0, 65, 0, 0],
   },
   {
     name: "レイズ",
@@ -2083,7 +2128,7 @@ this.character = [
     interval: 2.3,
     potential: [0, 28, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [105, 75, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2098,7 +2143,7 @@ this.character = [
     interval: 1.05,
     potential: [0, 26, 0, 0, 0],
     trust: [0, 40, 30, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [170, 75, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2113,7 +2158,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 30, 0, 0, 0],
     trust: [300, 55, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [300, 74, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2143,7 +2188,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 0, 80, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [250, 0, 85, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2188,8 +2233,8 @@ this.character = [
     interval: 1.0,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [160, 48, 0, 0, 0],
+    moduleY: [0, 24, 24, 0, 4],
   },
   {
     name: "シーン",
@@ -2203,7 +2248,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 0, 0, 8, 0],
     trust: [200, 0, 35, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 36, 30, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2249,7 +2294,7 @@ this.character = [
     potential: [0, 0, 0, 0, 0],
     trust: [200, 50, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [120, 0, 0, 0, 6],
   },
   {
     name: "ツキノギ",
@@ -2278,7 +2323,7 @@ this.character = [
     interval: 3.0,
     potential: [0, 45, 0, 0, 0],
     trust: [0, 130, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 82, 0, 4, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2293,7 +2338,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 30, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [240, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2308,8 +2353,8 @@ this.character = [
     interval: 1.6,
     potential: [0, 30, 0, 0, 0],
     trust: [0, 100, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [170, 75, 0, 0, 0],
+    moduleY: [0, 120, 16, 0, 0],
   },
   {
     name: "イーサン",
@@ -2323,7 +2368,7 @@ this.character = [
     interval: 3.5,
     potential: [150, 0, 0, 0, 0],
     trust: [450, 0, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [300, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2354,7 +2399,7 @@ this.character = [
     potential: [0, 24, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 42, 35, 0, 0],
   },
   {
     name: "セイロン",
@@ -2368,7 +2413,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 0, 0, 0],
     trust: [200, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 45, 0, 5, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2398,7 +2443,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 30, 0, 0, 0],
     trust: [0, 80, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 0, 50, 0, 5],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2414,7 +2459,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [190, 32, 0, 0, 0],
   },
   {
     name: "ブローカ",
@@ -2443,7 +2488,7 @@ this.character = [
     interval: 2.4,
     potential: [0, 34, 0, 0, 0],
     trust: [0, 95, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 75, 35, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2459,7 +2504,7 @@ this.character = [
     potential: [0, 25, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [125, 55, 20, 0, 0],
   },
   {
     name: "スズラン",
@@ -2473,7 +2518,7 @@ this.character = [
     interval: 1.9,
     potential: [0, 25, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [180, 0, 0, 0, 6],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2488,7 +2533,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [120, 45, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2504,7 +2549,7 @@ this.character = [
     potential: [0, 0, 0, 0, 0],
     trust: [100, 60, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [280, 55, 0, 0, 0],
   },
   {
     name: "レオンハルト",
@@ -2518,7 +2563,7 @@ this.character = [
     interval: 2.9,
     potential: [0, 32, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [155, 70, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2578,7 +2623,7 @@ this.character = [
     interval: 2.8,
     potential: [0, 33, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 60, 43, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2593,7 +2638,7 @@ this.character = [
     interval: 1.8,
     potential: [0, 0, 0, 0, 0],
     trust: [300, 0, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [210, 0, 31, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2623,7 +2668,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 25, 0, 0],
     trust: [0, 0, 75, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [250, 0, 65, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2639,7 +2684,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [150, 35, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 32, 32, 0, 0],
   },
   {
     name: "ロスモンティス",
@@ -2684,7 +2729,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [130, 0, 0, 0, 5],
   },
   {
     name: "九色鹿",
@@ -2713,7 +2758,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 27, 0, 0, 0],
     trust: [0, 80, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 65, 40, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2744,7 +2789,7 @@ this.character = [
     potential: [0, 23, 0, 0, 0],
     trust: [0, 80, 20, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 65, 50, 0, 0],
   },
   {
     name: "ウィーディ",
@@ -2758,8 +2803,23 @@ this.character = [
     interval: 1.2,
     potential: [140, 0, 0, 0, 8],
     trust: [0, 45, 45, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [210, 72, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
+  },
+  {
+    name: "エフイーター",
+    rarity: 5,
+    class: "特殊",
+    hp: 1845,
+    atk: 640,
+    def: 382,
+    res: 0,
+    block: 2,
+    interval: 1.2,
+    potential: [0, 0, 0, 0, 8],
+    trust: [300, 45, 0, 0, 0],
+    moduleX: [0, 0, 0, 0, 0],
+    moduleY: [170, 35, 35, 0, 0],
   },
   {
     name: "エンフォーサー",
@@ -2773,7 +2833,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 0, 0, 0, 0],
     trust: [350, 35, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [240, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2818,7 +2878,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 75, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [80, 47, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2848,8 +2908,8 @@ this.character = [
     interval: 3.0,
     potential: [0, 52, 0, 0, 0],
     trust: [0, 150, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [0, 90, 0, 0, 5],
+    moduleY: [175, 135, 0, 0, 0],
   },
   {
     name: "ルーメン",
@@ -2863,8 +2923,8 @@ this.character = [
     interval: 2.85,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 45, 30, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [160, 45, 0, 0, 0],
+    moduleY: [0, 45, 28, 0, 0],
   },
   {
     name: "ロックロック",
@@ -2893,7 +2953,7 @@ this.character = [
     interval: 2.4,
     potential: [0, 34, 0, 0, 0],
     trust: [150, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [130, 70, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2968,7 +3028,7 @@ this.character = [
     interval: 1.6,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [150, 50, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -2999,7 +3059,7 @@ this.character = [
     potential: [0, 30, 0, 0, 0],
     trust: [0, 70, 30, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [170, 75, 0, 0, 0],
   },
   {
     name: "トミミ",
@@ -3014,7 +3074,7 @@ this.character = [
     potential: [0, 0, 0, 0, 0],
     trust: [200, 35, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [0, 50, 25, 0, 0],
   },
   {
     name: "ブレミシャイン",
@@ -3029,7 +3089,7 @@ this.character = [
     potential: [0, 26, 0, 0, 0],
     trust: [0, 90, 20, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [270, 50, 50, 0, 0],
   },
   {
     name: "ユーネクテス",
@@ -3043,8 +3103,8 @@ this.character = [
     interval: 1.6,
     potential: [0, 0, 27, 0, 0],
     trust: [0, 70, 70, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [0, 105, 85, 0, 0],
+    moduleY: [0, 85, 110, 0, 0],
   },
   {
     name: "フレイムテイル",
@@ -3059,7 +3119,7 @@ this.character = [
     potential: [0, 25, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [300, 45, 0, 0, 0],
   },
   {
     name: "フリント",
@@ -3088,7 +3148,22 @@ this.character = [
     interval: 1.6,
     potential: [0, 0, 27, 0, 0],
     trust: [0, 55, 55, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [380, 90, 0, 0, 0],
+    moduleY: [0, 0, 0, 0, 0],
+  },
+  {
+    name: "ズィマー",
+    rarity: 5,
+    class: "先鋒",
+    hp: 2150,
+    atk: 470,
+    def: 350,
+    res: 0,
+    block: 2,
+    interval: 1.05,
+    potential: [0, 0, 24, 0, 0],
+    trust: [0, 0, 70, 0, 0],
+    moduleX: [260, 0, 37, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3148,7 +3223,7 @@ this.character = [
     interval: 2.85,
     potential: [0, 23, 0, 0, 0],
     trust: [200, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [140, 40, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3163,8 +3238,8 @@ this.character = [
     interval: 3.5,
     potential: [0, 32, 0, 0, 0],
     trust: [0, 110, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [220, 90, 0, 0, 0],
+    moduleY: [0, 70, 0, 0, 7],
   },
   {
     name: "ファートゥース",
@@ -3178,8 +3253,8 @@ this.character = [
     interval: 2.7,
     potential: [0, 40, 0, 0, 0],
     trust: [0, 100, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [0, 100, 0, 0, 7],
+    moduleY: [120, 120, 0, 0, 0],
   },
   {
     name: "カーネリアン",
@@ -3238,7 +3313,7 @@ this.character = [
     interval: 3.0,
     potential: [0, 36, 0, 0, 0],
     trust: [0, 100, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 70, 0, 0, 4],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3283,7 +3358,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 25, 0, 0, 0],
     trust: [200, 40, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [240, 65, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3298,8 +3373,8 @@ this.character = [
     interval: 2.3,
     potential: [0, 32, 0, 0, 0],
     trust: [0, 85, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [0, 90, 0, 0, 5],
+    moduleY: [60, 100, 0, 0, 0],
   },
   {
     name: "グレイディーア",
@@ -3313,7 +3388,7 @@ this.character = [
     interval: 1.8,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 50, 50, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [210, 70, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3343,7 +3418,7 @@ this.character = [
     interval: 1.2,
     potential: [0, 23, 0, 0, 0],
     trust: [0, 30, 55, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 70, 50, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3373,7 +3448,7 @@ this.character = [
     interval: 3.5,
     potential: [0, 30, 0, 0, 0],
     trust: [200, 60, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [330, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3388,7 +3463,7 @@ this.character = [
     interval: 2.9,
     potential: [0, 33, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [190, 60, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3463,8 +3538,8 @@ this.character = [
     interval: 1.05,
     potential: [0, 25, 0, 0, 0],
     trust: [300, 50, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleX: [210, 83, 0, 0, 0],
+    moduleY: [0, 60, 0, 0, 5],
   },
   {
     name: "Ash",
@@ -3479,7 +3554,7 @@ this.character = [
     potential: [0, 27, 0, 0, 0],
     trust: [0, 90, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
-    moduleY: [0, 0, 0, 0, 0],
+    moduleY: [200, 40, 0, 0, 0],
   },
   {
     name: "ワイルドメイン",
@@ -3493,7 +3568,7 @@ this.character = [
     interval: 1.0,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 70, 0, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 60, 0, 0, 5],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3598,7 +3673,7 @@ this.character = [
     interval: 1.3,
     potential: [0, 0, 0, 0, 0],
     trust: [0, 40, 40, 0, 0],
-    moduleX: [0, 0, 0, 0, 0],
+    moduleX: [0, 55, 55, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },
   {
@@ -3613,6 +3688,21 @@ this.character = [
     interval: 0.85,
     potential: [0, 23, 0, 0, 0],
     trust: [200, 40, 0, 0, 0],
+    moduleX: [0, 0, 0, 0, 0],
+    moduleY: [0, 0, 0, 0, 0],
+  },
+  {
+    name: "アオスタ",
+    rarity: 5,
+    class: "狙撃",
+    hp: 2376,
+    atk: 691,
+    def: 192,
+    res: 0,
+    block: 1,
+    interval: 2.3,
+    potential: [0, 26, 0, 0, 0],
+    trust: [0, 65, 0, 0, 0],
     moduleX: [0, 0, 0, 0, 0],
     moduleY: [0, 0, 0, 0, 0],
   },

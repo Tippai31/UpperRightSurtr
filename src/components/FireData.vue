@@ -16,7 +16,7 @@
         <Tips v-show="tipsShow" @closeing="tipscloseing" :tipsTitle="title" :tipsContents="contents"></Tips>
       </Transition>
       <div class="sanity" @click="mobileSwitch" :class="[switchingto ? 'off' : 'on', switchingto ? '' : 'rotate']">
-        <img src="../../public/logo/sanity.png">
+        <img src="../../public/logo/sanity.webp">
       </div>
       <TransitionGroup name="slide">
         <div class="main" v-show="(switchingto == true || deviceWidth > 480)" key="main">
@@ -488,6 +488,28 @@ export default {
       } else {
         this.chimg = "chsd/noimg.webp"
       }
+      let bg = document.querySelector('body');
+      switch (this.status.name) {
+        case "ウタゲ":
+          bg.style.transition = "background-image 5s linear"
+          bg.style.backgroundImage = "url('chbg/utage_summer.webp')"
+          break;
+        case "トミミ":
+          bg.style.transition = "background-image 5s linear"
+          bg.style.backgroundImage = "url('chbg/gavil_normal.webp')"
+          break;
+        case "Ash":
+          bg.style.transition = "background-image 5s linear"
+          bg.style.backgroundImage = "url('chbg/ash_neko.webp')"
+          break;
+        case "スズラン":
+          bg.style.transition = "background-image 5s linear"
+          bg.style.backgroundImage = "url('chbg/suzuran_light.webp')"
+          break;
+        default:
+          bg.style.transition = "background-image 0.5s linear"
+          bg.style.backgroundImage = "url('chbg/231076232.webp')"
+      }
     },
     onTimeUpdate() {
       setInterval(() => {
@@ -789,10 +811,11 @@ export default {
   z-index: 998;
   background-color: rgba(44, 51, 51, 0.8);
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  bottom: 10px;
-  right: 12px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
+  opacity: 0.8;
 }
 
 .sanity img {
@@ -810,7 +833,7 @@ export default {
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
-  background-image: url("../../public/logo/logo_rhodes.png");
+  background-image: url("../../public/logo/logo_rhodes.webp");
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 2;
@@ -1142,11 +1165,12 @@ li div input {
     position: fixed;
     top: auto;
     bottom: -10px;
-    left: 0;
-    width: 130px;
-    height: 130px;
+    left: -10px;
+    width: 120px;
+    height: 120px;
     transform: none;
     z-index: 6;
+    opacity: 0.8;
   }
 }
 </style>
