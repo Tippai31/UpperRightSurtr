@@ -213,7 +213,7 @@ export default {
 
 @font-face {
   font-family: 'logotype';
-  src: url("@/assets/font/logotype.otf");
+  src: url("@/assets/font/logotype.woff2");
 }
 
 @font-face {
