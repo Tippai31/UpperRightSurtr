@@ -19,9 +19,13 @@
   </Transition>
   <Transition name="fadeout">
     <div v-if="show" class="loading">
-      <img src="ムリナール.gif">
+      <video autoplay muted loop>
+        <source src="ムリナール.webm" type="video/webm">
+      </video>
       <p>LOADING...</p>
-      <img src="シルバーアッシュ.gif">
+      <video autoplay muted loop>
+        <source src="シルバーアッシュ.webm" type="video/webm">
+      </video>
     </div>
   </Transition>
   <Firestore />
@@ -167,7 +171,7 @@ export default {
   z-index: 999999;
 }
 
-.loading img {
+.loading video {
   width: 200px;
 }
 
@@ -190,11 +194,11 @@ export default {
     flex-direction: column;
   }
 
-  .loading img:first-of-type {
+  .loading video:first-of-type {
     margin-bottom: 10px;
   }
 
-  .loading img:last-of-type {
+  .loading video:last-of-type {
     margin-top: 10px;
   }
 
