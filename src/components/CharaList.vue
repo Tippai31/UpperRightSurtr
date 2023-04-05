@@ -282,10 +282,8 @@ export default {
 
 @media screen and (max-width: 480px) {
   .list-field {
-    width: 90%;
-    max-width: 900px;
-    height: 90%;
-    max-height: 900px;
+    width: 95%;
+    height: 95%;
   }
 
   .chara-list ul {

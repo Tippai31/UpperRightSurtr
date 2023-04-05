@@ -19,7 +19,7 @@
         <img src="../../public/logo/sanity.png">
       </div>
       <TransitionGroup name="slide">
-        <div class="main" v-show="((deviceWidth < 481 && switchingto == true) || deviceWidth > 480)" key="main">
+        <div class="main" v-show="(switchingto == true || deviceWidth > 480)" key="main">
           <ul class="status-list">
             <li>
               <div class="name">
@@ -48,7 +48,7 @@
                 <p>攻撃力</p>
               </div>
               <div>
-                <Transition name="rotate" mode="out-in">
+                <Transition name="rotate" mode="out-in" class="wrapper">
                   <p v-if="autoAny">{{ status.atk }}<span
                       v-if="(potentialSwitch || trustSwitch || moduleSwitch != 'N') && addAtk > 0">+{{
                         addAtk }}</span></p>
@@ -212,8 +212,7 @@
             </li>
           </ul>
         </div>
-
-        <div class="sub" v-show="((deviceWidth < 481 && switchingto == false) || deviceWidth > 480)" key="sub">
+        <div class="sub" v-show="(switchingto == false || deviceWidth > 480)" key="sub">
 
           <div class="switch-field">
             <ul>
@@ -501,25 +500,25 @@ export default {
     },
     showSurtr() {
       this.showvideo = true
-      this.video.src = '../chbg/スルトstart.webm';
+      this.video.src = 'chbg/スルトstart.webm';
     },
     Laevatein() {
       switch (this.canvasstate) {
         case 0:
           this.video.loop = true
-          this.video.src = '../chbg/スルトidle.webm';
+          this.video.src = 'chbg/スルトidle.webm';
           this.canvas.addEventListener('click', this.Laevatein, true)
           this.canvasstate = 1
           break;
         case 1:
           this.canvas.removeEventListener('click', this.Laevatein, true)
           this.video.loop = false
-          this.video.src = '../chbg/スルトs3start.webm';
+          this.video.src = 'chbg/スルトs3start.webm';
           this.canvasstate = 2
           break;
         case 2:
           this.video.loop = true
-          this.video.src = '../chbg/スルトs3loop.webm';
+          this.video.src = 'chbg/スルトs3loop.webm';
           setTimeout(() => {
             this.$data.video.loop = false
             this.canvasstate = 3
@@ -527,7 +526,7 @@ export default {
           break;
         case 3:
           this.video.loop = false
-          this.video.src = '../chbg/スルトdie.webm';
+          this.video.src = 'chbg/スルトdie.webm';
           this.canvasstate = 4
           break;
         case 4:
@@ -562,10 +561,12 @@ export default {
       }
     },
     mobileSwitch() {
-      if (this.switchingto) {
-        this.switchingto = false
-      } else {
-        this.switchingto = true
+      if (this.deviceWidth < 481) {
+        if (this.switchingto) {
+          this.switchingto = false
+        } else {
+          this.switchingto = true
+        }
       }
     },
     setTips(set) {
@@ -823,6 +824,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .character-set {
@@ -1072,25 +1074,15 @@ li div input {
   transition: 0.3s ease-in-out;
 }
 
-.scale-enter-from,
-.scale-leave-to {
-  opacity: 0;
-}
-
 .slide-move,
 .slide-enter-active,
 .slide-leave-active {
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .slide-enter-from,
 .slide-leave-to {
   opacity: 0;
-  transform: translateY(150px);
-}
-
-.slide-leave-active {
-  position: absolute;
 }
 
 
@@ -1100,7 +1092,8 @@ li div input {
   }
 
   .titleh1 {
-    font-size: 20px;
+    padding-top: 10px;
+    font-size: 16px;
   }
 
   .secret {
@@ -1108,19 +1101,21 @@ li div input {
   }
 
   .video {
-    position: absolute;
-    top: 15px;
+    position: fixed;
+    top: 5px;
     left: calc(100% - 120px);
     transition: 0.2s;
   }
 
   .secret {
-    position: fixed
+    position: fixed;
+    height: 100px;
   }
 
   .calc {
     margin-top: 5px;
     display: flex;
+    height: 100%;
     flex-direction: column;
     padding: 0;
   }
@@ -1131,8 +1126,8 @@ li div input {
 
   .main,
   .sub {
+    position: absolute;
     width: 100%;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: start;
