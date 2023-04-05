@@ -50,9 +50,7 @@ export default {
   },
   mounted() {
     window.onload = () => {
-      setTimeout(() => {
-        this.show = false
-      }, 500);
+      this.show = false
     }
     if (this.$cookies.isKey('visited')) {
       let visitCount = this.$cookies.get('visited')
