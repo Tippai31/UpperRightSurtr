@@ -471,7 +471,7 @@ export default {
     };
   },
   created: function () {
-    this.chimg = "chsd/noimg.png"
+    this.chimg = "chsd/noimg.webp"
   },
   mounted: function () {
     this.video = document.querySelector('.suruto')
@@ -484,9 +484,9 @@ export default {
     pick(selected) {
       if (selected) {
         this.status = selected
-        this.chimg = "chsd/" + this.status.name + ".png"
+        this.chimg = "chsd/" + this.status.name + ".webp"
       } else {
-        this.chimg = "chsd/noimg.png"
+        this.chimg = "chsd/noimg.webp"
       }
     },
     onTimeUpdate() {
