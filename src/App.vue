@@ -19,11 +19,11 @@
   </Transition>
   <Transition name="fadeout">
     <div v-if="show" class="loading">
-      <video autoplay muted loop>
+      <video preload="auto" autoplay muted loop playsinline>
         <source src="ムリナール.webm" type="video/webm">
       </video>
       <p>LOADING...</p>
-      <video autoplay muted loop>
+      <video preload="auto" autoplay muted loop playsinline>
         <source src="シルバーアッシュ.webm" type="video/webm">
       </video>
     </div>
