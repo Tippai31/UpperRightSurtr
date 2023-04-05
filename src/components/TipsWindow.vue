@@ -36,15 +36,18 @@ export default {
 <style scoped>
 .messagebox {
   z-index: 55;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 330px;
   margin: 0 auto;
   background-color: #F6F1F1;
   box-shadow: 1px 1px 2px #2C3333;
   color: #F6F1F1;
+  border-width: 0 4px 4px 4px;
+  border-style: solid;
+  border-color: #9D2503;
   font-family: "logotype";
 }
 

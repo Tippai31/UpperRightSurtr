@@ -296,11 +296,6 @@ export default {
     margin: 5px 2.5% 5px 2.5%;
   }
 
-  .chara-list ul li img.profession {
-    width: 14px;
-    height: 14px;
-  }
-
   .filter ul {
     flex-wrap: wrap;
   }

@@ -13,9 +13,9 @@
     </div>
     <div class="calc">
       <Transition name="scale">
-        <Tips v-if="tipsShow" @closeing="tipscloseing" :tipsTitle="title" :tipsContents="contents"></Tips>
+        <Tips v-show="tipsShow" @closeing="tipscloseing" :tipsTitle="title" :tipsContents="contents"></Tips>
       </Transition>
-      <div class="sanity" @click="mobileSwitch" :class="[switchingto ? 'off' : 'on']">
+      <div class="sanity" @click="mobileSwitch" :class="[switchingto ? 'off' : 'on', switchingto ? '' : 'rotate']">
         <img src="../../public/logo/sanity.png">
       </div>
       <TransitionGroup name="slide">
@@ -48,7 +48,7 @@
                 <p>攻撃力</p>
               </div>
               <div>
-                <Transition name="rotate" mode="out-in" class="wrapper">
+                <Transition name="rotate" mode="out-in">
                   <p v-if="autoAny">{{ status.atk }}<span
                       v-if="(potentialSwitch || trustSwitch || moduleSwitch != 'N') && addAtk > 0">+{{
                         addAtk }}</span></p>
@@ -227,11 +227,11 @@
               </li>
               <li>
                 <div :class="[autoAny ? 'on' : 'off']" @click="inputSwitch('auto')">
-                  <p>自動入力</p>
+                  <p>攻撃力自動</p>
                 </div>
 
                 <div :class="[autoAny ? 'off' : 'on']" @click="inputSwitch('any')">
-                  <p>任意入力
+                  <p>攻撃力手動
                   </p>
                 </div>
               </li>
@@ -782,6 +782,7 @@ export default {
 
 .sanity {
   display: none;
+  transition: 0.3s;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -1028,6 +1029,10 @@ li div input {
 .off {
   color: #F6F1F1;
   background-color: #2C3333 !important;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 .eventon {
