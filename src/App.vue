@@ -1,5 +1,16 @@
 <template>
   <Transition name="fadeout">
+    <div v-if="show" class="loading">
+      <video class="muri" preload="auto" autoplay muted loop playsinline>
+        <source src="" type="video/webm">
+      </video>
+      <p>LOADING...</p>
+      <video class="siru" preload="auto" autoplay muted loop playsinline>
+        <source src="" type="video/webm">
+      </video>
+    </div>
+  </Transition>
+  <Transition name="fadeout">
     <div class="wrapper" v-if="firstvisit">
       <div class="welcome">
         <div class="title">
@@ -17,17 +28,7 @@
       </div>
     </div>
   </Transition>
-  <Transition name="fadeout">
-    <div v-if="show" class="loading">
-      <video preload="auto" autoplay muted loop playsinline>
-        <source src="ムリナール.webm" type="video/webm">
-      </video>
-      <p>LOADING...</p>
-      <video preload="auto" autoplay muted loop playsinline>
-        <source src="シルバーアッシュ.webm" type="video/webm">
-      </video>
-    </div>
-  </Transition>
+
   <Firestore />
   <Transition name="fadeout">
     <Tutorial v-if="tutorial" @closeTutorial="close"></Tutorial>
@@ -50,9 +51,15 @@ export default {
       show: true,
       tutorial: false,
       firstvisit: false,
+      video1: '',
+      video2: ''
     }
   },
   mounted() {
+    this.video1 = document.querySelector('.muri')
+    this.video2 = document.querySelector('.siru')
+    this.video1.src = "ムリナール.webm"
+    this.video2.src = "シルバーアッシュ.webm"
     window.onload = () => {
       setTimeout(() => {
         this.show = false

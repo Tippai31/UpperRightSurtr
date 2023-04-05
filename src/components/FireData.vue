@@ -508,7 +508,7 @@ export default {
           break;
         default:
           bg.style.transition = "background-image 0.5s linear"
-          bg.style.backgroundImage = "url('chbg/231076232.webp')"
+          bg.style.backgroundImage = "url('chbg/white.webp')"
       }
     },
     onTimeUpdate() {

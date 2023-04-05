@@ -33,7 +33,7 @@
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   transition: background-image 5s linear;
-  background-image: url("/public/chbg/231076232.webp");
+  background-image: url("/public/chbg/white.webp");
   background-size: cover;
   background-position: 50% 50%;
 }

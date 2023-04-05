@@ -43,7 +43,7 @@ export default {
       profession: ["先鋒", "前衛", "重装", "狙撃", "術師", "医療", "補助", "特殊"],
     };
   },
-  created: function () {
+  mounted: function () {
     let terms = this.profession;
     this.data = charadata.character.sort(function (a, b) {
       if (a.rarity > b.rarity) return -1;
