@@ -1,13 +1,7 @@
 <template>
   <Transition name="fadeout">
     <div v-if="show" class="loading">
-      <video class="muri" preload="auto" autoplay muted loop playsinline>
-        <source src="" type="video/webm">
-      </video>
-      <p>LOADING...</p>
-      <video class="siru" preload="auto" autoplay muted loop playsinline>
-        <source src="" type="video/webm">
-      </video>
+      <img src="loading.webp">
     </div>
   </Transition>
   <Transition name="fadeout">
@@ -21,8 +15,8 @@
             <p>初めてのドクターに適当なチュートリアルが用意してあるよ！</p>
           </div>
           <div class="button">
-            <div class="iru" @click="ikuiku()"><img src="tutorial/ikuiku.png"></div>
-            <div class="iranai" @click="ikanai()"><img src="tutorial/gomenne.png"></div>
+            <div class="iru" @click="ikuiku()"><img src="tutorial/ikuiku.webp"></div>
+            <div class="iranai" @click="ikanai()"><img src="tutorial/gomenne.webp"></div>
           </div>
         </div>
       </div>
@@ -51,30 +45,22 @@ export default {
       show: true,
       tutorial: false,
       firstvisit: false,
-      video1: '',
-      video2: ''
     }
   },
   mounted() {
-    this.video1 = document.querySelector('.muri')
-    this.video2 = document.querySelector('.siru')
-    this.video1.src = "ムリナール.webm"
-    this.video2.src = "シルバーアッシュ.webm"
     window.onload = () => {
-      setTimeout(() => {
-        this.show = false
-      }, 500);
+      this.show = false
     }
-    if (this.$cookies.isKey('visited')) {
-      let visitCount = this.$cookies.get('visited')
+    if (this.$cookies.isKey('visit')) {
+      let visitCount = this.$cookies.get('visit')
       if (visitCount > 0) {
         this.firstvisit = false
       }
       visitCount = parseInt(visitCount) + 1
-      this.$cookies.set('visited', visitCount, 60 * 60 * 24 * 60)
+      this.$cookies.set('visit', visitCount, 60 * 60 * 24 * 7)
     } else {
       this.firstvisit = true
-      this.$cookies.set('visited', 0, 60 * 60 * 24 * 60)
+      this.$cookies.set('visit', 0, 60 * 60 * 24 * 7)
     }
   },
   methods: {
@@ -122,13 +108,14 @@ export default {
 .welcome {
   z-index: 55;
   font-family: "logotype";
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 50%;
+  max-width: 600px;
   margin: 0 auto;
-  background-color: #F6F1F1;
+  background-color: #fff;
   box-shadow: 1px 1px 2px #2C3333;
   color: #2C3333;
   border-width: 0 4px 4px 4px;
@@ -164,6 +151,7 @@ export default {
 
 .button .iru,
 .button .iranai {
+  cursor: pointer;
   width: 40%;
 }
 
@@ -182,8 +170,8 @@ export default {
   z-index: 999999;
 }
 
-.loading video {
-  width: 200px;
+.loading img {
+  height: 100%;
 }
 
 .fadeout-enter-active {
@@ -214,7 +202,7 @@ export default {
   }
 
   .welcome {
-    width: 330px;
+    width: 95%;
   }
 }
 

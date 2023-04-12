@@ -101,7 +101,7 @@ export default {
 
 <style scoped>
 .list-field {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -239,9 +239,9 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 18px;
-  height: 18px;
-  opacity: 0.8;
+  width: 24px;
+  height: 24px;
+  opacity: 0.75;
 }
 
 .chara-list ul li img:first-of-type {

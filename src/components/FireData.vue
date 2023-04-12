@@ -11,6 +11,16 @@
         <canvas class="surutocav" width="150px" height="150px"></canvas>
       </div>
     </div>
+    <div class="vs-wrap">
+      <div class="vs-field">
+        <div class="ally" @click="listshowing">
+          <img :src="chimg" alt="キャラクター画像">
+        </div>
+        <div class="enemy" @click="enemylistshowing">
+          <img :src="enemyimg" alt="敵の画像">
+        </div>
+      </div>
+    </div>
     <div class="calc">
       <Transition name="scale">
         <Tips v-show="tipsShow" @closeing="tipscloseing" :tipsTitle="title" :tipsContents="contents"></Tips>
@@ -213,7 +223,6 @@
           </ul>
         </div>
         <div class="sub" v-show="(switchingto == false || deviceWidth > 480)" key="sub">
-
           <div class="switch-field">
             <ul>
               <li>
@@ -227,24 +236,38 @@
               </li>
               <li>
                 <div :class="[autoAny ? 'on' : 'off']" @click="inputSwitch('auto')">
-                  <p>攻撃力自動</p>
+                  <p>自動</p>
                 </div>
 
                 <div :class="[autoAny ? 'off' : 'on']" @click="inputSwitch('any')">
-                  <p>攻撃力手動
+                  <p>手動
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div :class="[enemyautoAny ? 'on' : 'off']" @click="inputEnemySwitch('auto')">
+                  <p>敵自動</p>
+                </div>
+
+                <div :class="[enemyautoAny ? 'off' : 'on']" @click="inputEnemySwitch('any')">
+                  <p>敵手動
                   </p>
                 </div>
               </li>
             </ul>
           </div>
-
-          <ul class="status-list">
+          <div class="enemy-status-list">
             <li>
               <div class="title">
                 <p>敵のHP</p>
               </div>
               <div>
-                <input type="text" v-model.number="ehp" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemystatus.hp }}</p>
+                  <div class="any" v-else>
+                    <input type="text" v-model.number="ehp" @focus="$event.target.select()">
+                  </div>
+                </Transition>
               </div>
             </li>
             <li>
@@ -252,7 +275,12 @@
                 <p>防御力</p>
               </div>
               <div>
-                <input type="text" v-model.number="edef" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemystatus.def }}</p>
+                  <div class="any" v-else>
+                    <input type="text" v-model.number="edef" @focus="$event.target.select()">
+                  </div>
+                </Transition>
               </div>
             </li>
             <li>
@@ -260,83 +288,133 @@
                 <p>術耐性</p>
               </div>
               <div>
-                <input type="text" v-model.number="eres" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemystatus.res }}</p>
+                  <div class="any" v-else>
+                    <input type="text" v-model.number="eres" @focus="$event.target.select()">
+                  </div>
+                </Transition>
               </div>
             </li>
             <li>
               <div class="title">
-                <p>軽減(%)</p>
+                <p>エリート</p>
               </div>
               <div>
-                <input type="text" v-model.number="eri" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemyelite }}</p>
+                  <div class="any" v-else>
+                    <p></p>
+                  </div>
+                </Transition>
               </div>
             </li>
             <li>
               <div class="title">
-                <p>防＋－</p>
+                <p>ボス</p>
               </div>
               <div>
-                <input type="text" v-model.number="defdebuff" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemyboss }}</p>
+                  <div class="any" v-else>
+                    <p></p>
+                  </div>
+                </Transition>
               </div>
             </li>
             <li>
               <div class="title">
-                <p>防＋－(%)</p>
+                <p>移動／マス</p>
               </div>
               <div>
-                <input type="text" v-model.number="defdebuff2" @focus="$event.target.select()">
+                <Transition name="rotate" mode="out-in">
+                  <p v-if="enemyautoAny">{{ enemymoves }}</p>
+                  <div class="any" v-else>
+                    <p></p>
+                  </div>
+                </Transition>
               </div>
             </li>
-            <li>
-              <div class="title">
-                <p>防無視</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="defignore" @focus="$event.target.select()">
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <p>防無視(%)</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="defignore2" @focus="$event.target.select()">
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <p>術＋－</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="resdebuff" @focus="$event.target.select()">
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <p>術＋－(%)</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="resdebuff2" @focus="$event.target.select()">
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <p>術無視</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="resignore" @focus="$event.target.select()">
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <p>術無視(%)</p>
-              </div>
-              <div>
-                <input type="text" v-model.number="resignore2" @focus="$event.target.select()">
-              </div>
-            </li>
-          </ul>
-
+          </div>
+          <div class="debuffinput">
+            <p @click="debufflistshowing">↓デバフ入力欄↓</p>
+            <Transition name="debufflist">
+              <ul class="status-list" v-show="debuffList">
+                <li>
+                  <div class="title">
+                    <p>軽減(%)</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="eri" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>防＋－</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="defdebuff" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>防＋－(%)</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="defdebuff2" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>防無視</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="defignore" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>防無視(%)</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="defignore2" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>術＋－</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="resdebuff" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>術＋－(%)</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="resdebuff2" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>術無視</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="resignore" @focus="$event.target.select()">
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <p>術無視(%)</p>
+                  </div>
+                  <div>
+                    <input type="text" v-model.number="resignore2" @focus="$event.target.select()">
+                  </div>
+                </li>
+              </ul>
+            </Transition>
+          </div>
           <ul class="result-list">
             <li>
               <div class="title">
@@ -373,23 +451,27 @@
           </ul>
         </div>
       </TransitionGroup>
-      <div class="character-set" :style="{ backgroundImage: 'url(' + chimg + ')' }" @click="listshowing">
-      </div>
     </div>
   </div>
   <Transition name="list">
     <Charalist @select="pick" @showing="listshowing" v-show="listShow"></Charalist>
   </Transition>
+  <Transition name="list">
+    <Enemylist @select="pickEnemy" @showing="enemylistshowing" v-show="enemylistShow"></Enemylist>
+  </Transition>
+
+  <!--<EnemyList></EnemyList>-->
 </template>
 
 <script>
-
+import Enemylist from "./EnemyList.vue"
 import Charalist from "./CharaList.vue"
 import Tips from "./TipsWindow.vue"
 export default {
   name: "App",
   components: {
     Charalist,
+    Enemylist,
     Tips,
   },
   data() {
@@ -429,6 +511,7 @@ export default {
         contents: '剣豪の通常攻撃。水チェンのホリデーストーム(2回)、バグパイプのS3(3回)。'
       },
       listShow: false,
+      enemylistShow: false,
       tipsShow: false,
       video: "",
       canvas: "",
@@ -439,13 +522,20 @@ export default {
       status: {
         name: "名前"
       },
+      enemystatus: "",
       chimg: "",
+      enemyimg: "",
+      debuffList: false,
       autoAny: true,
+      enemyautoAny: true,
       physicsArts: false,
       potentialSwitch: false,
       trustSwitch: false,
       moduleSwitch: "N",
       anyatk: 0,
+      enemyanyhp: 0,
+      enemyanydef: 0,
+      enemyanyres: 0,
       atkfixedbuff: 0,
       atkaddbuff: 0,
       atkmultibuff: 0,
@@ -472,6 +562,7 @@ export default {
   },
   created: function () {
     this.chimg = "chsd/noimg.webp"
+    this.enemyimg = "enemy/sd/noimg.webp"
   },
   mounted: function () {
     this.video = document.querySelector('.suruto')
@@ -489,27 +580,53 @@ export default {
         this.chimg = "chsd/noimg.webp"
       }
       let bg = document.querySelector('body');
+
       switch (this.status.name) {
         case "ウタゲ":
           bg.style.transition = "background-image 5s linear"
           bg.style.backgroundImage = "url('chbg/utage_summer.webp')"
+          bg.style.backgroundSize = "contain"
+          bg.style.backgroundPosition = "center 0"
+          bg.style.backgroundRepeat = "no-repeat"
           break;
         case "トミミ":
           bg.style.transition = "background-image 5s linear"
           bg.style.backgroundImage = "url('chbg/gavil_normal.webp')"
+          bg.style.backgroundSize = "contain"
+          bg.style.backgroundPosition = "center 0"
+          bg.style.backgroundRepeat = "no-repeat"
           break;
         case "Ash":
           bg.style.transition = "background-image 5s linear"
           bg.style.backgroundImage = "url('chbg/ash_neko.webp')"
+          bg.style.backgroundSize = "contain"
+          bg.style.backgroundPosition = "center 0"
+          bg.style.backgroundRepeat = "no-repeat"
           break;
         case "スズラン":
           bg.style.transition = "background-image 5s linear"
           bg.style.backgroundImage = "url('chbg/suzuran_light.webp')"
+          bg.style.backgroundSize = "contain"
+          bg.style.backgroundPosition = "center 0"
+          bg.style.backgroundRepeat = "no-repeat"
+          break;
+        case "ロックロック":
+          bg.style.transition = "background-image 5s linear"
+          bg.style.backgroundImage = "url('chbg/sutein.webp')"
+          bg.style.backgroundSize = "contain"
+          bg.style.backgroundPosition = "center 0"
+          bg.style.backgroundRepeat = "no-repeat"
           break;
         default:
           bg.style.transition = "background-image 0.5s linear"
           bg.style.backgroundImage = "url('chbg/white.webp')"
+          bg.style.backgroundSize = "auto"
+          bg.style.backgroundRepeat = "auto"
       }
+    },
+    pickEnemy(selected) {
+      this.enemystatus = selected
+      this.enemyimg = "enemy/sd/" + this.enemystatus.name + ".webp"
     },
     onTimeUpdate() {
       setInterval(() => {
@@ -565,6 +682,20 @@ export default {
         this.listShow = true
       }
     },
+    enemylistshowing() {
+      if (this.enemylistShow) {
+        this.enemylistShow = false
+      } else {
+        this.enemylistShow = true
+      }
+    },
+    debufflistshowing() {
+      if (this.debuffList) {
+        this.debuffList = false
+      } else {
+        this.debuffList = true
+      }
+    },
     tipscloseing() {
       this.tipsShow = false
     },
@@ -580,6 +711,13 @@ export default {
         this.autoAny = true
       } if (which == "any") {
         this.autoAny = false
+      }
+    },
+    inputEnemySwitch(which) {
+      if (which == "auto") {
+        this.enemyautoAny = true
+      } if (which == "any") {
+        this.enemyautoAny = false
       }
     },
     mobileSwitch() {
@@ -602,11 +740,41 @@ export default {
       console.log(window.innerWidth)
       return window.innerWidth
     },
+    enemyelite() {
+      if (this.enemystatus.elite) {
+        return "○"
+      } else {
+        return "×"
+      }
+    },
+    enemyboss() {
+      if (this.enemystatus.boss) {
+        return "○"
+      } else {
+        return "×"
+      }
+    },
+    enemymoves() {
+      if (this.enemystatus.move) {
+        return (this.enemystatus.move * 0.5) + " s"
+      } else {
+        return ""
+      }
+    },
     damageCalc() {
       let x = 0;
       let atk = 0;
       let calculatedatk = 0;
       let result = 0;
+      let def = 0;
+      let res = 0;
+      if (this.enemyautoAny == false) {
+        def = this.edef
+        res = this.eres
+      } else if (this.enemyautoAny == true && this.enemystatus.name) {
+        def = this.enemystatus.def
+        res = this.enemystatus.res
+      }
       if (this.status.atk != undefined || this.autoAny == false) {
         if (this.autoAny == false) {
           atk = this.anyatk + this.addAtk
@@ -616,13 +784,13 @@ export default {
         x = atk + this.atkfixedbuff + this.atkaddbuff
         calculatedatk = (x * (1 + this.atkmultibuff / 100 + this.atkmultibuff2 / 100)) * (this.scale1 / 100) * (this.scale2 / 100)
         if (this.physicsArts == false) {
-          let finaldef = (((this.edef + this.defdebuff) * (1 + this.defdebuff2 / 100)) - this.defignore) * (1 - this.defignore2 / 100)
+          let finaldef = (((def + this.defdebuff) * (1 + this.defdebuff2 / 100)) - this.defignore) * (1 - this.defignore2 / 100)
           if (finaldef < 0) {
             finaldef = 0
           }
           result = ((calculatedatk - finaldef) * (1 - this.eri / 100))
         } else {
-          let finalres = (((this.eres + this.resdebuff) * (1 + this.resdebuff2 / 100)) - this.resignore) * (1 - this.resignore2 / 100)
+          let finalres = (((res + this.resdebuff) * (1 + this.resdebuff2 / 100)) - this.resignore) * (1 - this.resignore2 / 100)
           if (finalres < 0) {
             finalres = 0
           } else if (finalres > 100) {
@@ -648,7 +816,13 @@ export default {
     },
     atkTimes() {
       if (this.damageCalc > 0) {
-        return Math.ceil(this.ehp / this.damageCalc / this.barrage)
+        let enemyHP = 0
+        if (this.enemyautoAny == false) {
+          enemyHP = this.ehp
+        } else if (this.enemyautoAny == true && this.enemystatus.name != undefined) {
+          enemyHP = this.enemystatus.hp
+        }
+        return Math.ceil(enemyHP / this.damageCalc / this.barrage)
       } else {
         return 0
       }
@@ -765,6 +939,9 @@ export default {
 .field {
   max-width: 900px;
   margin: 0 auto;
+  transition: background-image 5s linear;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .titleh1 {
@@ -811,11 +988,11 @@ export default {
   z-index: 998;
   background-color: rgba(44, 51, 51, 0.8);
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   bottom: 5px;
   right: 5px;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .sanity img {
@@ -826,7 +1003,6 @@ export default {
 .calc {
   position: relative;
   font-family: "logotype";
-  margin-top: 15px;
   display: flex;
   padding: 10px;
   width: 100%;
@@ -835,7 +1011,6 @@ export default {
   justify-content: space-between;
   background-image: url("../../public/logo/logo_rhodes.webp");
   background-repeat: no-repeat;
-  background-size: contain;
   z-index: 2;
   background-position: 50% 50%;
 }
@@ -844,27 +1019,11 @@ export default {
 .main,
 .sub {
   z-index: 5;
-  width: 40%;
+  width: 48%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.character-set {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 75%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  cursor: pointer;
-  filter: drop-shadow(-2px -2px 0 #ffd900) drop-shadow(2px 2px 0 #ef9950);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  overflow: visible;
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -880,6 +1039,69 @@ export default {
   align-items: end;
 }
 
+.vs-wrap {
+  width: 100%;
+  background-size: contain;
+}
+
+.vs-field {
+  margin: 15px auto;
+  max-width: 400px;
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-repeat: no-repeat;
+  border-bottom: 20px solid #474a4d;
+  z-index: 2;
+}
+
+.vs-field::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 60px);
+  height: 60px;
+  bottom: 0;
+  left: 0px;
+  z-index: 3;
+  border-bottom: 60px solid #595857;
+  border-left: 60px solid rgba(44, 51, 51, 0);
+}
+
+.vs-field::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
+  left: calc(100% - 60px);
+  z-index: 3;
+  border-left: 60px solid #595857;
+  border-top: 60px solid rgba(44, 51, 51, 0);
+}
+
+.vs-field img {
+  width: 100%;
+}
+
+.vs-field .ally,
+.vs-field .enemy {
+  position: relative;
+  width: 48%;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.vs-field .ally>img {
+  filter: drop-shadow(-2px -2px 0 #ffd900) drop-shadow(2px 2px 0 #ef9950);
+}
+
+.vs-field .enemy>img {
+  filter: drop-shadow(-2px -2px 0 #8d93c8) drop-shadow(2px 2px 0 #4d4398);
+
+}
+
 .switch-field {
   width: 100%;
 }
@@ -893,15 +1115,11 @@ export default {
   height: 1.5rem;
   font-size: 14px;
   margin: 8px 8px 0px 8px;
-  width: 30%;
+  width: 32%;
   display: flex;
   align-items: stretch;
   background-color: #2C3333;
   box-shadow: 1px 1px 2px #2C3333;
-}
-
-.sub .switch-field ul li:nth-of-type(2) {
-  width: calc(70% - 16px);
 }
 
 .switch-field ul li div {
@@ -925,8 +1143,38 @@ export default {
   color: #F6F1F1;
 }
 
+.debuffinput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2px;
+  width: 100%;
+}
+
+.debuffinput>.status-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 24px;
+  background-color: rgba(44, 51, 51, 0.5);
+  z-index: 3;
+}
+
+.debuffinput>p {
+  cursor: pointer;
+  width: calc(100% - 16px);
+  background-color: #2C3333;
+  color: #F6F1F1;
+  height: 1.5rem;
+  font-size: 14px;
+  z-index: 4;
+}
+
 .status-list,
-.buff-list {
+.buff-list,
+.enemy-status-list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -946,7 +1194,8 @@ input {
 }
 
 .status-list li,
-.buff-list li {
+.buff-list li,
+.enemy-status-list li {
   background-color: #F6F1F1;
   margin: 8px;
   width: calc(50% - 16px);
@@ -957,7 +1206,8 @@ input {
 }
 
 .status-list li div,
-.buff-list li div {
+.buff-list li div,
+.enemy-status-list li div {
   position: relative;
   width: 100%;
   display: flex;
@@ -999,6 +1249,7 @@ input {
 }
 
 .status-list li div p,
+.enemy-status-list li div p,
 li div input {
   width: 100%;
 }
@@ -1009,7 +1260,8 @@ li div input {
 
 .status-list li>div:first-of-type,
 .buff-list li>div:first-of-type,
-.result-list li>div:first-of-type {
+.result-list li>div:first-of-type,
+.enemy-status-list li>div:first-of-type {
   font-size: 14px;
   height: 1.5rem;
   color: #F6F1F1;
@@ -1019,7 +1271,8 @@ li div input {
 
 .status-list li div:last-of-type,
 .buff-list li div:last-of-type,
-.result-list li div:last-of-type {
+.result-list li div:last-of-type,
+.enemy-status-list li div:last-of-type {
   font-family: "molot", "logotype";
   height: 1.5rem;
 }
@@ -1113,6 +1366,18 @@ li div input {
   opacity: 0;
 }
 
+.debufflist-enter-active {
+  transition: 0.4s ease-in-out;
+}
+
+.debufflist-leave-active {
+  transition: 0.4s ease-in-out;
+}
+
+.debufflist-enter-from,
+.debufflist-leave-to {
+  opacity: 0;
+}
 
 @media screen and (max-width: 480px) {
   .field {
@@ -1120,7 +1385,7 @@ li div input {
   }
 
   .titleh1 {
-    padding-top: 10px;
+    padding-top: 5px;
     font-size: 16px;
   }
 
@@ -1140,12 +1405,20 @@ li div input {
     height: 100px;
   }
 
+  .vs-field {
+    margin: 0 auto;
+    width: 85%;
+  }
+
   .calc {
-    margin-top: 5px;
     display: flex;
     height: 100%;
     flex-direction: column;
     padding: 0;
+  }
+
+  .switch-field ul li {
+    margin-top: 3px;
   }
 
   .sanity {
@@ -1161,16 +1434,19 @@ li div input {
     justify-content: start;
   }
 
-  .character-set {
-    position: fixed;
-    top: auto;
-    bottom: -10px;
-    left: -10px;
-    width: 120px;
-    height: 120px;
-    transform: none;
-    z-index: 6;
-    opacity: 0.8;
+  .buff-list {
+    margin-top: 3px;
+  }
+
+  .status-list li,
+  .buff-list li {
+    margin: 4px;
+    width: calc(50% - 8px);
+  }
+
+  .result-list li {
+    margin: 4px;
+    width: calc(50% - 8px);
   }
 }
 </style>

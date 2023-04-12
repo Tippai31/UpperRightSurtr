@@ -9,11 +9,10 @@
         <p>{{ tutorialContents }}</p>
         <div class="contents-image">
           <img :src="tutorialImg">
-          <img :src="tutorialImg2">
         </div>
         <div class="button">
-          <div class="prev" @click="prev(currentPosition)"><img src="tutorial/left_anchor.png"></div>
-          <div class="next" @click="next(currentPosition)"><img src="tutorial/right_anchor.png"></div>
+          <div class="prev" @click="prev(currentPosition)"><img src="tutorial/left_anchor.webp"></div>
+          <div class="next" @click="next(currentPosition)"><img src="tutorial/right_anchor.webp"></div>
         </div>
       </div>
     </div>
@@ -25,9 +24,8 @@ export default {
   data() {
     return {
       tutorialTitle: 'ちゅーとりある',
-      tutorialContents: 'シルエットになってるキャラの部分を押せばキャラクター一覧が開く。\n左上の【職業】でフィルターがかけられる。\nスマホだと左下にいる。',
+      tutorialContents: 'シルエットになってるキャラの部分を押せばキャラクター一覧が開く。',
       tutorialImg: 'tutorial/tutorial01.jpg',
-      tutorialImg2: 'tutorial/tutorial02.jpg',
       currentPosition: 0
     }
   },
@@ -57,27 +55,23 @@ export default {
       switch (this.currentPosition) {
         case 0:
           this.tutorialTitle = 'ちゅーとりある'
-          this.tutorialContents = 'シルエットになってるキャラの部分を押せばキャラクター一覧が開く。\n左上の【職業】でフィルターがかけられる。\nスマホだと左下にいる。'
-          this.tutorialImg = 'tutorial/tutorial01.jpg'
-          this.tutorialImg2 = 'tutorial/tutorial02.jpg'
+          this.tutorialContents = 'シルエットになってるキャラの部分を押せばキャラクター一覧が開く。'
+          this.tutorialImg = 'tutorial/tutorial01.webp'
           break;
         case 1:
           this.tutorialTitle = 'ちゅーとりある２'
-          this.tutorialContents = 'キャラクターを選択するとステータス(LvMaX時)が表示される。攻撃力の値はデフォルトは自動で入力されるが【手動】に切り替えも可能。\nスマホは右下のボタンで表示切り替えが出来る。'
-          this.tutorialImg = 'tutorial/tutorial03.jpg'
-          this.tutorialImg2 = 'tutorial/tutorial04.jpg'
+          this.tutorialContents = 'キャラクターor敵選択画面。【職業】または【フィルター】でフィルターが掛けられる。\n頑張って見つけろ。'
+          this.tutorialImg = 'tutorial/tutorial02.webp'
           break;
         case 2:
           this.tutorialTitle = 'ちゅーとりある３'
-          this.tutorialContents = '信頼度や潜在のところを押すとその分のステータスが加算される。所要時間については30フレームで丸めたりしてるので多少ズレてると思われる。\nガバ画質は気にするな。'
-          this.tutorialImg = 'tutorial/tutorial05.jpg'
-          this.tutorialImg2 = 'tutorial/tutorial06.jpg'
+          this.tutorialContents = 'バフ欄は項目タッチで簡単な説明が出る。所要時間（敵を倒すのにかかる時間）は、30フレームで丸めたり四捨五入のせいで多少ズレてる。（短い方にはズレない）\n【デバフ入力欄】は見れば分かる通り押せば入力欄が出てくる。\nダメージ（1回）は攻撃モーション1回に与えるダメージ。'
+          this.tutorialImg = 'tutorial/tutorial03.webp'
           break;
         case 3:
           this.tutorialTitle = 'ちゅーとりある４'
-          this.tutorialContents = '当然だけど入力項目多いからPC表示推奨です。一応スマホ表示も適当に対応したけど。\nニコハゲへ。\n許可貰わず絵を使ってるのでダメだったら消します。絵柄すこすこ。'
-          this.tutorialImg = 'tutorial/tutorial07.jpg'
-          this.tutorialImg2 = 'tutorial/tutorial08.jpg'
+          this.tutorialContents = 'スズシコ！！！！！！！！！！！！！！！！！\nミュルジスじゅるじゅる！！！！！！！！！！\nスワイヤーの水着早く実装しろ！！！！！\n下の画像はなんの関係もございません。※ちゅーとりあるおしり'
+          this.tutorialImg = 'tutorial/tutorial07.webp'
           break;
       }
     }
@@ -99,11 +93,12 @@ export default {
 .tutorialbox {
   z-index: 55;
   font-family: "logotype";
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 50%;
+  max-width: 600px;
   margin: 0 auto;
   background-color: #F6F1F1;
   box-shadow: 1px 1px 2px #2C3333;
@@ -136,13 +131,12 @@ export default {
 .tutorialbox .contents p {
   white-space: pre-line;
   text-align: left;
-  height: 84px;
-  margin: 0 10px 0 0;
+  width: 95%;
+  margin: 0 5px 0 5px;
 }
 
 .tutorialbox .contents img {
-  width: 45%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tutorialbox .contents .contents-image {
@@ -150,7 +144,8 @@ export default {
   display: flex;
   align-items: stretch;
   justify-content: space-evenly;
-  height: 230px;
+  height: 50%;
+  max-height: 400px;
 }
 
 .button {
@@ -212,15 +207,12 @@ export default {
 
 @media screen and (max-width: 480px) {
   .tutorialbox {
-    width: 330px;
+    width: 95%;
   }
 
   .tutorialbox .contents {
     font-size: 12px;
   }
 
-  .tutorialbox .contents p {
-    height: 72px;
-  }
 }
 </style>

@@ -32,10 +32,7 @@
   line-height: 1.5;
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  transition: background-image 5s linear;
   background-image: url("/public/chbg/white.webp");
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 :where(input, button, textarea, select) {
