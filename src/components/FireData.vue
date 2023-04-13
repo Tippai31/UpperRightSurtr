@@ -140,7 +140,7 @@
           <ul class="buff-list">
             <li>
               <div class="title" @click="setTips('bufffixed')">
-                <p>バフ(固定)</p>
+                <p>バフ(調整)</p>
               </div>
               <div>
                 <input type="text" v-model.number="atkfixedbuff" @focus="$event.target.select()">
@@ -148,7 +148,7 @@
             </li>
             <li>
               <div class="title" @click="setTips('buffaddition')">
-                <p>バフ(加)</p>
+                <p>鼓舞</p>
               </div>
               <div>
                 <input type="text" v-model.number="atkaddbuff" @focus="$event.target.select()">
@@ -156,7 +156,7 @@
             </li>
             <li>
               <div class="title" @click="setTips('buffmulti')">
-                <p>バフ(乗)</p>
+                <p>バフ(加)</p>
               </div>
               <div>
                 <input type="text" v-model.number="atkmultibuff" @focus="$event.target.select()">
@@ -164,7 +164,7 @@
             </li>
             <li>
               <div class="title" @click="setTips('buffmulti')">
-                <p>バフ(乗)</p>
+                <p>バフ(加)</p>
               </div>
               <div>
                 <input type="text" v-model.number="atkmultibuff2" @focus="$event.target.select()">
@@ -483,15 +483,15 @@ export default {
         contents: '計算前の純粋な攻撃力値に足す項目。主に微調整用。'
       },
       buffaddition: {
-        title: '攻撃バフ（加算）',
+        title: '攻撃バフ（直接加算）',
         contents: '攻撃力＋ｎ％ではなく、吟遊者の鼓舞のみ対象。'
       },
       buffmulti: {
-        title: '攻撃バフ（乗算）',
+        title: '攻撃バフ（加算）',
         contents: '攻撃力＋ｎ％のこと。2項目用意してあるから適当に使え。'
       },
       buffscale: {
-        title: '攻撃倍率',
+        title: '攻撃倍率（乗算）',
         contents: '攻撃力ｎ％まで上昇～、もしくは攻撃力のｎ％の物理(術)ダメージって書き方はココ。'
       },
       buffspd: {
@@ -508,7 +508,7 @@ export default {
       },
       buffbarrage: {
         title: '1回の攻撃でｎ回のダメージ',
-        contents: '剣豪の通常攻撃。水チェンのホリデーストーム(2回)、バグパイプのS3(3回)。'
+        contents: '一度の攻撃モーションで攻撃する回数。剣豪の通常攻撃。水チェンのホリデーストーム(2回)、バグパイプのS3(3回)。'
       },
       listShow: false,
       enemylistShow: false,
@@ -783,6 +783,7 @@ export default {
         }
         x = atk + this.atkfixedbuff + this.atkaddbuff
         calculatedatk = (x * (1 + this.atkmultibuff / 100 + this.atkmultibuff2 / 100)) * (this.scale1 / 100) * (this.scale2 / 100)
+        console.log(this.physicsArts)
         if (this.physicsArts == false) {
           let finaldef = (((def + this.defdebuff) * (1 + this.defdebuff2 / 100)) - this.defignore) * (1 - this.defignore2 / 100)
           if (finaldef < 0) {
