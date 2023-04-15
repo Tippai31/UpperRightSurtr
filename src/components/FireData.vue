@@ -454,10 +454,10 @@
     </div>
   </div>
   <Transition name="list">
-    <Charalist @select="pick" @showing="listshowing" v-show="listShow"></Charalist>
+    <Charalist @select="pick" @showing="listshowing" v-if="listShow"></Charalist>
   </Transition>
   <Transition name="list">
-    <Enemylist @select="pickEnemy" @showing="enemylistshowing" v-show="enemylistShow"></Enemylist>
+    <Enemylist @select="pickEnemy" @showing="enemylistshowing" v-if="enemylistShow"></Enemylist>
   </Transition>
 
   <!--<EnemyList></EnemyList>-->
